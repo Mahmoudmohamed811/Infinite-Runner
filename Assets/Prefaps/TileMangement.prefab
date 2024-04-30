@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8555577964791248471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2792787611164778244}
+  - component: {fileID: 3612210046841329147}
+  m_Layer: 0
+  m_Name: TileMangement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2792787611164778244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8555577964791248471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3612210046841329147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8555577964791248471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cffd681cb6bcfe244b513f61549b3c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePrefaps:
+  - {fileID: 8816942246081259043, guid: a18cd0557f22e8645a22514e8b0a65c8, type: 3}
+  - {fileID: 1588935327141361971, guid: 8328f13edf1719a4681288a9619337df, type: 3}
+  - {fileID: 526124121274256156, guid: df3d42200fd75714398711d6f1149760, type: 3}
+  - {fileID: 8849710353124976929, guid: 81d2ff8e133a4d64896c8a4a971a224d, type: 3}
+  - {fileID: 8543229522737700715, guid: 09b13f0dd5c57bc449c477069bf90c96, type: 3}
+  - {fileID: 2003524688786238349, guid: ab93b3f9d4f481a41b89b8f34e6beeb6, type: 3}
+  zSpawn: 0
+  tileLenght: 30
+  numberOfTiles: 5
+  playerTransform: {fileID: 0}
