@@ -24,10 +24,12 @@ public class PlayerMovements : MonoBehaviour
     private bool isSliding = false;
 
     private Animator animator;
+    private AudioManger audioManager;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        audioManager = FindObjectOfType<AudioManger>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         originalColliderCenter = capsuleCollider.center;
         originalColliderHeight = capsuleCollider.height;
@@ -45,6 +47,7 @@ public class PlayerMovements : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D) || SwipeManager.swipeRight)
         {
+            audioManager.PlaySound("swipe");
             desiredLane++;
             if (desiredLane == 3)
                 desiredLane = 2;
@@ -52,6 +55,7 @@ public class PlayerMovements : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A) || SwipeManager.swipeLeft)
         {
+            audioManager.PlaySound("swipe");
             desiredLane--;
             if (desiredLane == -1)
                 desiredLane = 0;
@@ -60,15 +64,17 @@ public class PlayerMovements : MonoBehaviour
         
         if(desiredLane == 0)
         {
+            
             targetPostion += Vector3.left * landDistance;
         }
 
         if (desiredLane == 2)
         {
+            
             targetPostion += Vector3.right * landDistance;
         }
 
-        transform.position = Vector3.Lerp(transform.position, targetPostion, 70 * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, targetPostion, moveSpeed);
         
         
 
@@ -105,7 +111,7 @@ public class PlayerMovements : MonoBehaviour
 
     void Jump()
     {
-        
+        audioManager.PlaySound("jump");
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         animator.SetBool("isJumping", true);
         
@@ -114,6 +120,7 @@ public class PlayerMovements : MonoBehaviour
     IEnumerator Slide()
     {
         //animator.SetTrigger("Slide");
+        audioManager.PlaySound("slide");
         animator.SetBool("isSliding", true);
         isSliding = true;
         // Reduce collider size
@@ -139,9 +146,9 @@ public class PlayerMovements : MonoBehaviour
         if(collision.collider.tag == "obstacle")
         {
             StartCoroutine(death());
-            
-            FindObjectOfType<AudioManger>().StopSound("Main Theme");
-            FindObjectOfType<AudioManger>().PlaySound("End Game");
+
+            audioManager.StopSound("Main Theme");
+            audioManager.PlaySound("End Game");
         }
         if (collision.collider.tag == "ground")
         {
@@ -159,5 +166,7 @@ public class PlayerMovements : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         PlayerManger.gameOver = true;
     }
+
+
 
 }

@@ -47,7 +47,7 @@ MonoBehaviour:
   sounds:
   - name: Main Theme
     clip: {fileID: 8300000, guid: 42d31bcb4491a724ebe5d622273a24da, type: 3}
-    volume: 0.1
+    volume: 0.2
     pitch: 0
     loop: 1
     source: {fileID: 0}
@@ -66,6 +66,30 @@ MonoBehaviour:
   - name: ButtonClick
     clip: {fileID: 8300000, guid: 5f97af9381c4fc2468918a529a9d0691, type: 3}
     volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: jump
+    clip: {fileID: 8300000, guid: b767bd1c2ff3daa4d8a4f8bbfc9b3b37, type: 3}
+    volume: 0.3
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: swipe
+    clip: {fileID: 8300000, guid: 74412c30b8e847049b7c3b2d98f28c95, type: 3}
+    volume: 0.3
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: slide
+    clip: {fileID: 8300000, guid: c694d258e35b517429d936bc858de70b, type: 3}
+    volume: 0.3
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: fight
+    clip: {fileID: 8300000, guid: 003c07c1982317a44a623d4c880d14ff, type: 3}
+    volume: 0.3
     pitch: 0
     loop: 0
     source: {fileID: 0}
